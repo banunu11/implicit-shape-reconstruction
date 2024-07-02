@@ -4,8 +4,8 @@ import shutil
 from pathlib import Path
 
 # Paths
-base_dir = Path('downloads/osfstorage-archive')
-output_dir = Path('downloads/extracted/labels')
+base_dir = Path('C:/Users/BMU/Downloads/osfstorage-archive')
+output_dir = Path('C:/Users/BMU/Downloads/extracted/labels')
 
 # Create output directory if it doesn't exist
 output_dir.mkdir(parents=True, exist_ok=True)
@@ -25,9 +25,9 @@ for dataset_type in ['test', 'training', 'validation']:
     for subfolder in rawdata_path.iterdir():
         if subfolder.is_dir() and subfolder.name.startswith('sub-verse'):
             sub_id = subfolder.name.split('-')[-1]
-            gz_file_path = subfolder / f'{subfolder.name}.gz'
+            gz_file_path = next(subfolder.glob('*.gz'), None)
             
-            if gz_file_path.exists():
+            if gz_file_path and gz_file_path.exists():
                 # Construct the output file path
                 output_file_path = output_dir / f'verse{sub_id}.nii'
                 # Extract and save the file
