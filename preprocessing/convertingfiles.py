@@ -21,6 +21,10 @@ for dataset_type in ['test', 'training', 'validation']:
     dataset_path = base_dir / f'dataset-verse19-{dataset_type}'
     rawdata_path = dataset_path / 'rawdata'
     
+    if not rawdata_path.exists():
+        print(f'Raw data path does not exist: {rawdata_path}')
+        continue
+    
     # Iterate through subfolders in rawdata
     for subfolder in rawdata_path.iterdir():
         if subfolder.is_dir() and subfolder.name.startswith('sub-verse'):
@@ -33,5 +37,7 @@ for dataset_type in ['test', 'training', 'validation']:
                 # Extract and save the file
                 extract_gz_file(gz_file_path, output_file_path)
                 print(f'Extracted: {gz_file_path} to {output_file_path}')
+            else:
+                print(f'No GZ file found in: {subfolder}')
 
 print('Extraction and renaming complete.')
