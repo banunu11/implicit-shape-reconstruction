@@ -35,8 +35,11 @@ for dataset_type in ['test', 'training', 'validation']:
                 # Construct the output file path
                 output_file_path = output_dir / f'verse{sub_id}.nii'
                 # Extract and save the file
-                extract_gz_file(gz_file_path, output_file_path)
-                print(f'Extracted: {gz_file_path} to {output_file_path}')
+                try:
+                    extract_gz_file(gz_file_path, output_file_path)
+                    print(f'Extracted: {gz_file_path} to {output_file_path}')
+                except Exception as e:
+                    print(f'Failed to extract {gz_file_path}: {e}')
             else:
                 print(f'No GZ file found in: {subfolder}')
 
