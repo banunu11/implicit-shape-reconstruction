@@ -1,8 +1,10 @@
 import os
 import re
 
+# this is to convert the names of the files to fit the casename
+
 # Path to the directory containing the files to be renamed
-folder_path = r'C:\Users\ella2\Downloads\thingy\extracted\derivatives\validation'  # Replace with your folder path
+folder_path = r'C:\Users\ella2\Downloads\thingy\extracted\derivatives\test'  # Replace with your folder path
 
 # Regular expression to match files starting with "verseverse" followed by three digits
 pattern = re.compile(r'^verseverse(\d{3})')

@@ -3,6 +3,8 @@ import gzip
 import shutil
 from pathlib import Path
 
+# this is for converting them and putting them in different folders
+
 # Base directory where dataset folders are located
 base_dir = Path('C:/Users/BMU/Downloads/osfstorage-archive')
 

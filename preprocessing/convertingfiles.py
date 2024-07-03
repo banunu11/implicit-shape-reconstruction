@@ -3,6 +3,8 @@ import gzip
 import shutil
 from pathlib import Path
 
+# this is for converting the files into one folder
+
 # Paths
 base_dir = Path('C:/Users/BMU/Downloads/osfstorage-archive')
 output_dir = Path('C:/Users/BMU/Downloads/extracted/labels')
