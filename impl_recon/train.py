@@ -3,11 +3,15 @@ import sys
 import time
 from pathlib import Path
 from typing import Optional
+import sys
+import os
 
 import torch
 from torch.optim import optimizer as opt
 from torch.utils import data
 from torch.utils.tensorboard import SummaryWriter
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from impl_recon.models import implicits
 from impl_recon.utils import config_io, data_generation, io_utils, nn_utils

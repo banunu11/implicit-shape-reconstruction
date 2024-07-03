@@ -86,7 +86,7 @@ def load_volumes(volumes_dir: Path, casenames: List[str]) -> Tuple[List[torch.Te
             raise ValueError('Local to global image matrix is supposed to be 4x4, have scaling '
                              'and translation components only, and positive scaling. Instead got\n'
                              f'{affine}')
-        spacing = np.diagonal(affine)[:3].copy()
+        spacing = np.diagonal(affine)[:3].copy() 
         volumes.append(volume)
         spacings.append(spacing)
 
@@ -467,9 +467,9 @@ def create_data_loader(params: Dict, phase_type: PhaseType, verbose: bool) -> da
     if params['labels_dirname'] == 'None':
         raise ValueError('Labels directory is required, it\'s name cannot be \'None\'.')
 
-    base_dir = params['data_basedir']
-    labels_dir = base_dir / params['labels_dirname']
-    casefiles_basedir = params['casefiles_basedir']
+    base_dir = Path('/public/home/chenhb/cheryl/implicit-shape-reconstruction/data')
+    labels_dir = base_dir / 'labels'
+    casefiles_basedir = Path('/public/home/chenhb/cheryl/implicit-shape-reconstruction/casename_files/verse19')
 
     if not labels_dir.exists() or not casefiles_basedir.exists():
         raise ValueError('At least one of following data directories does not exist:'
@@ -537,3 +537,4 @@ def create_data_loader(params: Dict, phase_type: PhaseType, verbose: bool) -> da
     dl = data.DataLoader(ds, batch_size, do_shuffle, num_workers=num_workers,
                          drop_last=do_drop_last)
     return dl
+

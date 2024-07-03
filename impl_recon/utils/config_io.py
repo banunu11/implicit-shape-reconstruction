@@ -87,7 +87,8 @@ def parse_config_train() -> Tuple[Dict, Path]:
 
     config = read_path_config(args.path_file)
     model_config_path = Path(args.config_file)
-    config.update(read_train_config(model_config_path, 'train_config_default.yml'))
+    default_config_path = Path(r'C:\Users\ella2\Desktop\academic ish\Others\computer science things\summer\implicit-shape-reconstruction\train_config_default.yml')
+    config.update(read_train_config(model_config_path, default_config_path))
 
     return config, model_config_path
 
