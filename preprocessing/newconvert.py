@@ -20,10 +20,10 @@ def extract_gz_file(gz_file_path, output_dir):
     print(f'Extracted: {gz_file_path} to {output_file_path}')
 
 # Path to the directory containing the .gz files
-input_dir = Path(r'C:\Users\ella2\Downloads\thingy\converted\training zip')  # Replace with your folder path
+input_dir = Path(r'C:\Users\ella2\Downloads\thingy\converted\labels\thing')  # Replace with your folder path
 
 # Path to the output directory (can be the same as input_dir or a different directory)
-output_dir = Path(r'C:\Users\ella2\Downloads\thingy\converted\training')  # Replace with your output folder path
+output_dir = Path(r'C:\Users\ella2\Downloads\thingy\converted\labels')  # Replace with your output folder path
 
 # Iterate through all .gz files in the specified directory
 for gz_file_path in input_dir.glob('*.gz'):

@@ -209,8 +209,8 @@ def main():
     Then extract volumes with individual vertebra.
     """
     np.set_printoptions(precision=4, suppress=True)
-    labels_dir = Path(r'C:\Users\ella2\Downloads\thingy\extracted\derivatives\training')
-    target_labels_dir = Path(r'C:\Users\ella2\Downloads\thingy\extracted\derivatives\training')
+    labels_dir = Path(r'C:\Users\ella2\Downloads\thingy\osfstorage-archive\validation_sef')
+    target_labels_dir = Path(r'C:\Users\ella2\Downloads\thingy\data')
     verbose_loading = False
     pattern = '*.nii*'
     bbox_size = 128

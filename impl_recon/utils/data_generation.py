@@ -77,6 +77,7 @@ def load_volumes(volumes_dir: Path, casenames: List[str]) -> Tuple[List[torch.Te
     for casename in casenames:
         curr_pattern = f'{casename}*.nii*'
         files = list(volumes_dir.glob(curr_pattern))
+        print(files)
         if len(files) != 1:
             raise ValueError(f'Exactly one file must fit the pattern:\n'
                              f'{volumes_dir / curr_pattern}')
@@ -467,9 +468,9 @@ def create_data_loader(params: Dict, phase_type: PhaseType, verbose: bool) -> da
     if params['labels_dirname'] == 'None':
         raise ValueError('Labels directory is required, it\'s name cannot be \'None\'.')
 
-    base_dir = Path('/public/home/chenhb/cheryl/implicit-shape-reconstruction/data')
+    base_dir = Path(r'C:\Users\ella2\Desktop\academic ish\Others\computer science things\summer\implicit-shape-reconstruction\data')
     labels_dir = base_dir / 'labels'
-    casefiles_basedir = Path('/public/home/chenhb/cheryl/implicit-shape-reconstruction/casename_files/verse19')
+    casefiles_basedir = Path(r'C:\Users\ella2\Desktop\academic ish\Others\computer science things\summer\implicit-shape-reconstruction\casename_files\verse19')
 
     if not labels_dir.exists() or not casefiles_basedir.exists():
         raise ValueError('At least one of following data directories does not exist:'
