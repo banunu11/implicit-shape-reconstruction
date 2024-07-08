@@ -1,0 +1,24 @@
+Traceback (most recent call last):
+  File "train.py", line 286, in <module>
+    main()
+  File "train.py", line 267, in main
+    train_one_epoch(task_type, ds_loader_train, net, latents_train, lat_reg_lambda, optimizer,
+  File "train.py", line 63, in train_one_epoch
+    labels_pred = net(latents_batch, coords)
+  File "/public/home/chenhb/.local/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1130, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/public/home/chenhb/cheryl/implicit-shape-reconstruction/impl_recon/models/implicits.py", line 77, in forward
+    predictions = self.occp_pred(latents, local_coords)
+  File "/public/home/chenhb/.local/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1130, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/public/home/chenhb/cheryl/implicit-shape-reconstruction/impl_recon/models/implicits.py", line 36, in forward
+    out = layer(features)
+  File "/public/home/chenhb/.local/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1130, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/public/home/chenhb/.local/lib/python3.8/site-packages/torch/nn/modules/container.py", line 139, in forward
+    input = module(input)
+  File "/public/home/chenhb/.local/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1130, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/public/home/chenhb/.local/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 114, in forward
+    return F.linear(input, self.weight, self.bias)
+RuntimeError: CUDA out of memory. Tried to allocate 1024.00 MiB (GPU 0; 10.75 GiB total capacity; 9.10 GiB already allocated; 700.69 MiB free; 9.12 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF

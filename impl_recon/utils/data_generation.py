@@ -468,9 +468,11 @@ def create_data_loader(params: Dict, phase_type: PhaseType, verbose: bool) -> da
     if params['labels_dirname'] == 'None':
         raise ValueError('Labels directory is required, it\'s name cannot be \'None\'.')
 
-    base_dir = Path(r'C:\Users\ella2\Desktop\academic ish\Others\computer science things\summer\implicit-shape-reconstruction\data')
+    # base_dir = Path(r'C:\Users\ella2\Desktop\academic ish\Others\computer science things\summer\implicit-shape-reconstruction\data')
+    base_dir = Path(r'/public/home/chenhb/cheryl/implicit-shape-reconstruction/data')
     labels_dir = base_dir / 'labels'
-    casefiles_basedir = Path(r'C:\Users\ella2\Desktop\academic ish\Others\computer science things\summer\implicit-shape-reconstruction\casename_files\verse19')
+    casefiles_basedir = Path(r'/public/home/chenhb/cheryl/implicit-shape-reconstruction/casename_files/verse19')
+    # casefiles_basedir = Path(r'C:\Users\ella2\Desktop\academic ish\Others\computer science things\summer\implicit-shape-reconstruction\casename_files\verse19')
 
     if not labels_dir.exists() or not casefiles_basedir.exists():
         raise ValueError('At least one of following data directories does not exist:'

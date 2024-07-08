@@ -206,7 +206,7 @@ def load_checkpoint(model, optimizer, checkpoint_path):
 def main():
     params, config_filepath = config_io.parse_config_train()
     # model_basedir: Path = r"/public/home/chenhb/cheryl/implicit-shape-reconstruction/model_dir"
-    model_dir = Path(r'/public/home/chenhb/cheryl/implicit-shape-reconstruction/model_dir/Autodecoder')
+    model_dir = Path(r'/public/home/chenhb/cheryl/implicit-shape-reconstruction/models_dir/Autodecoder')
     task_type = params['task_type']
     learning_rate = params['learning_rate'] * params['batch_size_train']
     lat_reg_lambda = params['lat_reg_lambda']
