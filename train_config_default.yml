@@ -33,7 +33,7 @@ lat_reg_lambda: 1.0e-4
 learning_rate: 1.0e-4
 # For AD: not scaled with batch size; only used for training.
 learning_rate_lat: 1.0e-3
-num_epochs: 40000
+num_epochs: 2000
 # Log to tensorboard every x epochs (train and val)
 log_epoch_count: 2
 # Store model checkpoint every x epochs
